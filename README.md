@@ -2,6 +2,8 @@
 
 [![contains technical debt](https://shields.io/badge/contains-technical%20debt-blue?style=for-the-badge)](#)[![made with crayons](https://shields.io/badge/made%20with%20crayons-green?style=for-the-badge)](#)[![made in byond](https://github.com/goonstation/goonstation/assets/4741640/041eb7c6-4bfa-443a-a615-5e1e0bfa3c11)](#)
 
+This is a minimal fork of Goonstation to make it functional in OpenDream (mainly by supporting both 32-bit and 64-bit rust-g).
+
 # SETUP
 
 [<img src=".github/assets/setup.png" alt="Setup" width="150" align="left">](https://hackmd.io/@goonstation/docs/%2F%40goonstation%2Fdev)

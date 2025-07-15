@@ -449,11 +449,28 @@ TYPEINFO(/mob)
 
 	..()
 
+/client/var/opendream_alerted = FALSE
+
+/client/proc/opendream_alert()
+	set waitfor = FALSE
+	if(opendream_alerted)
+		return
+	opendream_alerted = TRUE
+	var/message = "OpenDream is a work in progress. This means:\n"
+	message += "- Things will be broken.\n"
+	message += "- Things are not implemented yet.\n"
+	message += "- The game may crash or become unplayable.\n"
+	message += "- We are NOT affiliated with the official Goonstation community.\n\n"
+	message += "Want to make OpenDream a reality? Join our Discord and contribute today!"
+	alert(src, message, "OpenDream WIP Notice", "I understand")
+
 /mob/Login()
 	if (isnull(src.client))
 		return
 		// Guests that get deleted, is how
 		// stack_trace("mob/Login called without a client for mob [identify_object(src)]. What?")
+	if (!src.client.opendream_alerted)
+		src.client.opendream_alert()
 	if(isnull(src.client?.tg_layout))
 		src.client?.tg_layout = winget( src.client, "menu.tg_layout", "is-checked" ) == "true"
 	src.client?.set_layout(src.client?.tg_layout)
